@@ -34,14 +34,21 @@ public class Snake implements SnakeMovement {
     public void pickupItem() {
         if (posX == itemPosX && posY == itemPosY){
             length++;
+            System.out.println("");
+            System.out.println("************");
             System.out.println("Item Pickup!");
+            System.out.println("************");
+            System.out.println("");
+
+            spawnItem();
         }
 
     }
 
     @Override
     public void spawnItem() {
-
+        itemPosX = 3;
+        itemPosY = 3;
     }
 
     @Override

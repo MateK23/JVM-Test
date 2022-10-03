@@ -19,6 +19,7 @@ public class Main {
                 String action = scanner.next().toLowerCase();
 
                 switch (action){
+                    case "u":
                     case "up":
                         snakeGame.moveUp();
                         snakeGame.pickupItem();
@@ -27,6 +28,7 @@ public class Main {
                         snakeGame.displayPosition();
 
                         break;
+                    case "d":
                     case "down":
                         snakeGame.moveDown();
                         snakeGame.pickupItem();
@@ -35,6 +37,7 @@ public class Main {
                         snakeGame.displayPosition();
 
                         break;
+                    case "r":
                     case "right":
                         snakeGame.moveRight();
                         snakeGame.pickupItem();
@@ -43,6 +46,7 @@ public class Main {
                         snakeGame.displayPosition();
 
                         break;
+                    case "l":
                     case "left":
                         snakeGame.moveLeft();
                         snakeGame.pickupItem();
