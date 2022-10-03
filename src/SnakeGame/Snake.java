@@ -1,5 +1,7 @@
 package SnakeGame;
 
+import java.util.Random;
+
 public class Snake implements SnakeMovement {
     int posX = 0;
     int posY = 0;
@@ -8,6 +10,7 @@ public class Snake implements SnakeMovement {
 
     int itemPosX = 5;
     int itemPosY = 5;
+
 
     @Override
     public void moveUp() {
@@ -47,8 +50,16 @@ public class Snake implements SnakeMovement {
 
     @Override
     public void spawnItem() {
-        itemPosX = 3;
-        itemPosY = 3;
+        Random ran = new Random();
+        int x = ran.nextInt(6) + 1;
+        int y = ran.nextInt(6) + 1;
+
+        itemPosX = x;
+        itemPosY = y;
+
+        System.out.println("************");
+        System.out.println("New item spawned at: "+ x +", "+ y + " position ");
+        System.out.println("************");
     }
 
     @Override
@@ -63,6 +74,7 @@ public class Snake implements SnakeMovement {
 
     @Override
     public void die() {
+        System.out.println(" *** Game Over *** ");
         gameLoop = false;
     }
 
