@@ -1,21 +1,69 @@
-import java.io.IOException;
+import SnakeGame.Snake;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        System.out.print("Type number: ");
-        boolean loop = true;
 
-        while(loop){
+        boolean gameLoop = true;
+
+        Snake snakeGame = new Snake();
+
+        while(gameLoop){
+            System.out.print("Action (up, down, left, right, score, end): ");
+
             try {
                 Scanner scanner = new Scanner(System.in);
-                int num = scanner.nextInt();
-                loop = false;
-            }
-            catch (ArithmeticException e){
-                System.out.println("Arithmetic ERROR");
+                String action = scanner.next().toLowerCase();
+
+                switch (action){
+                    case "u":
+                    case "up":
+                        snakeGame.moveUp();
+                        snakeGame.pickupItem();
+                        snakeGame.displayLength();
+                        snakeGame.displayItemPosition();
+                        snakeGame.displayPosition();
+
+                        break;
+                    case "d":
+                    case "down":
+                        snakeGame.moveDown();
+                        snakeGame.pickupItem();
+                        snakeGame.displayLength();
+                        snakeGame.displayItemPosition();
+                        snakeGame.displayPosition();
+
+                        break;
+                    case "r":
+                    case "right":
+                        snakeGame.moveRight();
+                        snakeGame.pickupItem();
+                        snakeGame.displayLength();
+                        snakeGame.displayItemPosition();
+                        snakeGame.displayPosition();
+
+                        break;
+                    case "l":
+                    case "left":
+                        snakeGame.moveLeft();
+                        snakeGame.pickupItem();
+                        snakeGame.displayLength();
+                        snakeGame.displayItemPosition();
+                        snakeGame.displayPosition();
+
+                        break;
+                    case "score":
+                        snakeGame.displayLength();
+                        snakeGame.displayPosition();
+                        break;
+                    case "end":
+                        gameLoop = false;
+                    default:
+                        throw new InputMismatchException();
+                }
             }
             catch (InputMismatchException e){
                 System.out.println("Input Mismatch ERROR");
@@ -23,22 +71,7 @@ public class Main {
             catch(Exception e) {
                 System.out.print("ERROR: ");
                 System.out.println(e.toString().toUpperCase());
-                e.printStackTrace();
             }
         }
-
-
-        // ------------
-
-        try {
-            float x = 30 / 0;
-        }
-        catch (ArithmeticException e2){
-            System.out.println("Arithmetic ERROR");
-        }
-        catch(Exception e) {
-            System.out.println("ERROR");
-        }
-
     }
 }
