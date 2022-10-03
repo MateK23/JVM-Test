@@ -5,10 +5,12 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.print("Type number: ");
+
         boolean loop = true;
 
         while(loop){
+            System.out.print("Type number: ");
+
             try {
                 Scanner scanner = new Scanner(System.in);
                 int num = scanner.nextInt();
@@ -25,12 +27,14 @@ public class Main {
                 System.out.println(e.toString().toUpperCase());
                 e.printStackTrace();
             }
+
+
         }
 
 
         // ------------
 
-        try {
+        /* try {
             float x = 30 / 0;
         }
         catch (ArithmeticException e2){
@@ -40,5 +44,6 @@ public class Main {
             System.out.println("ERROR");
         }
 
+         */
     }
 }
