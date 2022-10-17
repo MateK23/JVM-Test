@@ -1,14 +1,13 @@
 import SnakeGame.Snake;
 import GUI.GUI;
+import SnakeGUI.SnakeGUI;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
-        // new GUI();
-        
+        new SnakeGUI();
 
         boolean gameLoop = true;
 
